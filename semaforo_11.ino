@@ -47,15 +47,5 @@ else{
     delay(500);
     digitalWrite( 6, LOW);
     delay(500);
-  }
-    
-    
-  
-  
-    
-  
-  
-  
-  
-  
+  } 
 }
