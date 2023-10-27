@@ -1,6 +1,6 @@
 int a=0;
 float f=0;
-int cost=0;
+float cost=0;
 int cup=0;
 
 
@@ -10,20 +10,19 @@ void setup()
   pinMode(7, OUTPUT);
   pinMode(6, OUTPUT);
   pinMode(5, OUTPUT);
-  pinMode(11, INPUT);
-  pinMode(10, INPUT);
-  pinMode(9, INPUT);
-  pinMode(8, INPUT);
+  pinMode(4, INPUT);
+  pinMode(3, INPUT);
+
 }
 
 
 void loop(){
-    a=digitalRead(11);
-    f=digitalRead(10);
+    a=digitalRead(4);
+    f=digitalRead(3);
     cup>=0;
   
   
-  if(cup<22){
+  if(cup<8){
     digitalWrite(5,HIGH);
     digitalWrite(7,LOW);
   }
@@ -35,19 +34,19 @@ void loop(){
   }
   
   
-  if(a==HIGH && cup<22){
+  if(a==HIGH && cup<8){
     cup=cup+1;
     delay(1000);
-    Serial.print("\n HAY PARQUEADO ");
+    Serial.print("\n  Hay cupo ");
     Serial.print(cup);
-    Serial.print(" VEHICULOS ");
+    Serial.print(" Autos ");
  
 
   
     
-    if (cup>21){
-       Serial.print("\n ¡PARQUEADERO SIN ESPACIO!");
-       delay(3000);
+    if (cup>7){
+       Serial.print("  No hay espacio  ");
+       delay(2000);
     }
   
   }
@@ -55,13 +54,13 @@ void loop(){
   
   if(f==HIGH&&cup>0){
     cup=cup-1;
-    cost=cost+5;
+    cost=cost+5000;
     delay(1000);
-    Serial.print("\n ¡GRACIAS BUENA DIA/BUENA TARDE/BUENA NOCHE! +");
+    Serial.print("\n  Siempre a la orden  ");
     Serial.print(cost);
-    Serial.print("K COP/PESOS");
-    Serial.print("\n QUEDARON PARQUEADO ");
+    Serial.print(" Total ");
+    Serial.print("   Quedaron parqueados  ");
     Serial.print(cup);
-    Serial.print(" VEHICULOS");
+    Serial.print(" Autos");
   } 
 }
