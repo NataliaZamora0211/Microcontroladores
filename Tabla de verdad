@@ -11,43 +11,19 @@ void setup()
 }
 
 void loop()
-  
 {
- 
-  bool SW1;
-  SW1= digitalRead(11);
-  bool SW2; 
-  SW2= digitalRead(10);
- 
-  
-  if(SW1==0){
-  digitalWrite(7,HIGH);
-  delay(5000);
-  digitalWrite(7,LOW);
-  digitalWrite(6,HIGH);
-  digitalWrite(7,HIGH);
-  delay(1000);
-  digitalWrite(6,LOW);
-  digitalWrite(7,LOW);
-  digitalWrite(5,HIGH);
-  delay(3000);
-  digitalWrite(5,LOW);
-  digitalWrite(6,HIGH);
-  delay(1000);
-  digitalWrite(6,LOW);
-  } 
-else{
-  pinMode(7,  LOW);
-  pinMode(6,  LOW);
-  pinMode(5,  LOW);
-  }
-  
-  if ( SW1==1 && SW2==1) {
-    digitalWrite( 6, HIGH);
-    delay(500);
-    digitalWrite( 6, LOW);
-    delay(500);
-  }
+  bool A, B, C, D, E,F,G;
+  A = digitalRead(11);
+  B = digitalRead(10);
+  C! = digitalRead(9);
+  D!= digitalRead(8);
+  E = D&&(A&&(B||C)||!A&&!B&&!C||B&&C)||!A&&!D&&(B^C)||A&&B&&C;
+  digitalWrite(7, E);
+  F = A&&B&&C&&D;
+  digitalWrite(6, F);
+  G = A&&(B||D||C)||B&&(D||C)||C&&D;
+  digitalWrite(5, G);
+}
     
     
   
